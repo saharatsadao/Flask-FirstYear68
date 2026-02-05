@@ -23,21 +23,20 @@ def about():
     print("call about page!!!!!!!!!!!")
     return render_template("about.html", title="about")
 
-@app.route("/listRequest")
-def list_request():
-    request = [
+
+request = [
     {"ids": 1, "case_name": "แจ้งซ่อมพัดลม"},
     {"ids": 2, "case_name": "แจ้งซ่อมแอร์"},
     {"ids": 3, "case_name": "แจ้งซ่อมประตู"}
     ]
+
+@app.route("/listRequest")
+def list_request(): 
     return render_template("request_cases.html", request_cases=request, title = "Case")
 
 @app.route("/new_case")
 def new_case():
     return render_template("new.html")
-
-# @app.route("/new_case/new", methods=["POST"])
-# def add_new():
 
 
 if __name__ == "__main__":
